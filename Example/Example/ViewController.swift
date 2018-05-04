@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let snackbar = Snackbar()
+    var snackbar = Snackbar()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +32,13 @@ class ViewController: UIViewController {
     }
 
     func setupview() {
-        let snackbar = Snackbar()
+        snackbar.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: 50)
         view.addSubview(snackbar)
-        snackbar.backgroundColor = UIColor.black
+        snackbar.backgroundColor = UIColor.red
         snackbar.setupSnackbar(parentView: view)
 
         snackbar.title.text = "test snackbar"
+        snackbar.title.textColor = UIColor.blue
         snackbar.subTitle.text = "sub title"
         snackbar.actionButton.setTitle("button", for: .normal)
     }

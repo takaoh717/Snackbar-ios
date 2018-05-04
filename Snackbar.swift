@@ -27,7 +27,7 @@ public class Snackbar: UIView {
 
     public func setupSnackbar(parentView: UIView) {
 
-        frame = CGRect(x: 0, y: parentView.frame.height, width: parentView.frame.width, height: 50)
+//        frame = CGRect(x: 0, y: parentView.frame.height - 100, width: parentView.frame.width, height: 50)
         isUserInteractionEnabled = true
 
         // set up auto layout
@@ -44,10 +44,10 @@ public class Snackbar: UIView {
         title.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
 
         // set up subtitle
-//        parentView.addSubview(subTitle)
-//        subTitle.translatesAutoresizingMaskIntoConstraints = false
-//        subTitle.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 16).isActive  = true
-//        subTitle.leadingAnchor.constraint(equalTo: title.leadingAnchor).isActive = true
+        parentView.addSubview(subTitle)
+        subTitle.translatesAutoresizingMaskIntoConstraints = false
+        subTitle.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 16).isActive  = true
+        subTitle.leadingAnchor.constraint(equalTo: title.leadingAnchor).isActive = true
 
         // set up button
         parentView.addSubview(actionButton)
@@ -59,6 +59,9 @@ public class Snackbar: UIView {
     }
 
     public func show() {
+//        DispatchQueue.main.async {
+//            self.transform = CGAffineTransform(translationX: 0, y: -100)
+//        }
         UIView.animate(withDuration: animateDuration) {
             self.transform = CGAffineTransform(translationX: 0, y: -self.frame.height)
         }
