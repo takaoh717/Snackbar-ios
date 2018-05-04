@@ -33,6 +33,7 @@ class ViewController: UIViewController {
 
     func setupview() {
         let snackbar = Snackbar()
+        view.addSubview(snackbar)
         snackbar.backgroundColor = UIColor.black
         snackbar.setupSnackbar(parentView: view)
 
