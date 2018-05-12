@@ -15,7 +15,7 @@ public class Snackbar: UIView {
     public var actionButton: UIButton = UIButton()
 
     public var animateDuration: Double = 0.5
-    public var dismissDelayTime: Int = 5
+    public var dismissDelayTime: Int = 3
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,7 +27,7 @@ public class Snackbar: UIView {
 
     public func setupSnackbar(parentView: UIView) {
 
-//        frame = CGRect(x: 0, y: parentView.frame.height - 100, width: parentView.frame.width, height: 50)
+        frame = CGRect(x: 0, y: parentView.frame.height - 100, width: parentView.frame.width, height: 50)
         isUserInteractionEnabled = true
 
         // set up auto layout
@@ -38,19 +38,19 @@ public class Snackbar: UIView {
         heightAnchor.constraint(equalToConstant: frame.height).isActive = true
 
         // set up title
-        parentView.addSubview(title)
+        self.addSubview(title)
         title.translatesAutoresizingMaskIntoConstraints = false
         title.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
         title.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
 
         // set up subtitle
-        parentView.addSubview(subTitle)
+        self.addSubview(subTitle)
         subTitle.translatesAutoresizingMaskIntoConstraints = false
         subTitle.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 16).isActive  = true
         subTitle.leadingAnchor.constraint(equalTo: title.leadingAnchor).isActive = true
 
         // set up button
-        parentView.addSubview(actionButton)
+        self.addSubview(actionButton)
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         actionButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
         actionButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
@@ -59,9 +59,6 @@ public class Snackbar: UIView {
     }
 
     public func show() {
-//        DispatchQueue.main.async {
-//            self.transform = CGAffineTransform(translationX: 0, y: -100)
-//        }
         UIView.animate(withDuration: animateDuration) {
             self.transform = CGAffineTransform(translationX: 0, y: -self.frame.height)
         }

@@ -18,11 +18,13 @@ class ViewController: UIViewController {
 
         let button = UIButton()
         view.addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(self.showSnackbar), for: .touchUpInside)
-        button.frame = CGRect(x: view.frame.minX, y: view.frame.midY, width: 300, height: 50)
-        button.backgroundColor = UIColor.red
+        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         button.setTitle("show snackbar", for: .normal)
-
+        button.setTitleColor(UIColor.blue, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         setupview()
     }
 
@@ -32,14 +34,15 @@ class ViewController: UIViewController {
     }
 
     func setupview() {
-        snackbar.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: 50)
+
         view.addSubview(snackbar)
-        snackbar.backgroundColor = UIColor.red
+        snackbar.backgroundColor = UIColor.darkGray
         snackbar.setupSnackbar(parentView: view)
 
         snackbar.title.text = "test snackbar"
         snackbar.title.textColor = UIColor.blue
         snackbar.subTitle.text = "sub title"
+        snackbar.subTitle.textColor = UIColor.black
         snackbar.actionButton.setTitle("button", for: .normal)
     }
 
