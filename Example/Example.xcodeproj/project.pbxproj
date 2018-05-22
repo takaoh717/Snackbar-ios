@@ -13,6 +13,7 @@
 		DBAF38732095B2B70036C177 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBAF38722095B2B70036C177 /* Assets.xcassets */; };
 		DBAF38762095B2B70036C177 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBAF38742095B2B70036C177 /* LaunchScreen.storyboard */; };
 		DBAF387F2095B4190036C177 /* Snackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAF387E2095B4190036C177 /* Snackbar.swift */; };
+		DBF125B320AFEFB50039C5D3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF125B220AFEFB50039C5D3 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DBAF38752095B2B70036C177 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBAF38772095B2B70036C177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBAF387E2095B4190036C177 /* Snackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Snackbar.swift; path = ../../../Snackbar.swift; sourceTree = "<group>"; };
+		DBF125B220AFEFB50039C5D3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				DBAF387D2095B3F90036C177 /* Snackbar */,
 				DBAF386B2095B2B60036C177 /* AppDelegate.swift */,
 				DBAF386D2095B2B60036C177 /* ViewController.swift */,
+				DBF125B220AFEFB50039C5D3 /* SecondViewController.swift */,
 				DBAF386F2095B2B60036C177 /* Main.storyboard */,
 				DBAF38722095B2B70036C177 /* Assets.xcassets */,
 				DBAF38742095B2B70036C177 /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBF125B320AFEFB50039C5D3 /* SecondViewController.swift in Sources */,
 				DBAF387F2095B4190036C177 /* Snackbar.swift in Sources */,
 				DBAF386E2095B2B60036C177 /* ViewController.swift in Sources */,
 				DBAF386C2095B2B60036C177 /* AppDelegate.swift in Sources */,

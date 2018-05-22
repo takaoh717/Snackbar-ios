@@ -10,11 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // snackbar
     var snackbar = Snackbar()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        view.backgroundColor = UIColor.white
 
         let button = UIButton()
         view.addSubview(button)
@@ -28,22 +29,31 @@ class ViewController: UIViewController {
         setupview()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    // setup snackbar
     func setupview() {
 
         view.addSubview(snackbar)
-        snackbar.backgroundColor = UIColor.darkGray
-        snackbar.setupSnackbar(parentView: view)
+        snackbar.backgroundColor = UIColor.white
 
-        snackbar.title.text = "test snackbar"
-        snackbar.title.textColor = UIColor.blue
-        snackbar.subTitle.text = "sub title"
-        snackbar.subTitle.textColor = UIColor.black
-        snackbar.actionButton.setTitle("button", for: .normal)
+        snackbar.title.text = "saved to list"
+        snackbar.title.textColor = UIColor.black
+
+        // if you use subtitle, initialize snackbar.subtitle
+        snackbar.subTitle = UILabel()
+        snackbar.subTitle?.text = "view list"
+        snackbar.subTitle?.textColor = UIColor.lightGray
+
+        // if you use actionButton, initialize snackbar.actionButton
+        snackbar.actionButton = UIButton()
+        snackbar.actionButton?.setTitle("change", for: .normal)
+        snackbar.actionButton?.setTitleColor(UIColor.black, for: .normal)
+        snackbar.actionButton?.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+
+        snackbar.setupSnackbar(parentView: view, position: .top)
+    }
+
+    @objc func tapButton() {
+        present(SecondViewController(), animated: true, completion: nil)
     }
 
     @objc func showSnackbar() {
@@ -51,4 +61,3 @@ class ViewController: UIViewController {
     }
 
 }
-
